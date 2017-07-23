@@ -3,9 +3,12 @@ This is a Spring Boot REST Service project using the spring,jpa,data and ehcache
 
 JPA Entity Classes: Price Objects includes the PricePK as its Composite PrimaryKey
 
-Scheduler Task:A timer task runs once per minute in order to delete values more than 30 days old. Since the price service can be accessible concurrently by multiple threads and potentially by multiple simultaneous REST API calls and incoming JMS messages, its internal caches and data stores are protected by a Reentrant Read-Write Lock.
+Scheduling Task:A timer task runs once per minute in order to delete values more than 30 days old. 
 
-EHCache Config is used to cache the price objects based on pricesByVendorId & pricesByInstrumentId.
+Protection against Concurrent Modification:
+Since the price service can be accessible concurrently by multiple threads and potentially by multiple simultaneous REST API calls and incoming JMS messages, its internal caches and data stores are protected by a Reentrant Read-Write Lock.
+
+Caching: EHCache Config is used to cache the price objects based on pricesByVendorId & pricesByInstrumentId.
 
 Command to start this project: mvn spring-boot:run
 
