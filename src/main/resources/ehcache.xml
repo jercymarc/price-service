@@ -1,0 +1,10 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">
+    <cache name="pricesByVendorId"
+           maxEntriesLocalHeap="200"
+           timeToLiveSeconds="600">
+    </cache>
+    <cache name="pricesByInstrumentId"
+           maxEntriesLocalHeap="200"
+           timeToLiveSeconds="600">
+    </cache>
+</ehcache>
